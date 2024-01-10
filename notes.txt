@@ -1,5 +1,8 @@
 Este projeto é feito utilizando a stack MERN + OPENAI, abaixo deixarei instrucoes do passo a passo GERAL para a construçao de um projeto do genero
 
+
+*******STEP BY STEP BACKEND*******
+
 1° Iniciaremos com a parte BACKEND
 
 2° Copiamos os files deste GITHUB:https://github.com/Nikhilthadani/MERN-AI-ChatBot
@@ -23,4 +26,6 @@ Este projeto é feito utilizando a stack MERN + OPENAI, abaixo deixarei instruco
 
 8° Linkei REP LOCAL + REMOTO
 
+9° Criamos as pastas no SRC: config, controllers, models, routes, utils e database
 
+10° Conectamos com o MONGODB
