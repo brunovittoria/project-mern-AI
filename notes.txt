@@ -42,3 +42,7 @@ RODAR: npm run dev
 14° Criamos controllers para serem designados para cuidar das rotas
 
 15° Testamos as rotas no THUNDERBOLT
+
+16° Criando MIDDLEWARES: Funcoes executadas ANTES de uma REQ ser executada, no NODE pode ser usado para checar o JSON BODY, TOKENS, COOKIES, PARAMS e muito mais. 
+
+E como se fosse um BODY GUARD que so deixa entrar dps das VERIFICACOES e no caso em que nao seja atendida a verificacao ira avisar para o FRONT oque precisa pra entrar na "festa". Para isso existe uma dependency express-validator. Iremos criar esses validator dentro UTILS
