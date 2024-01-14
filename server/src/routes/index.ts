@@ -4,8 +4,8 @@ import chatRoutes from "./chat-routes.js";
 
 const appRouter = Router()
 
-appRouter.use("/user", userRoutes) //domain/api/v1/user   Dessa forma userRoutes ira cuidar dessa REQ
-appRouter.use("/chats", chatRoutes) //domain/api/v1/chats Dessa forma chatRoutes ira cuidar dessa REQ
+appRouter.use("/user", userRoutes) //domain/api/v1/user   Dessa forma userRoutes ira cuidar dessa ROTA
+appRouter.use("/chats", chatRoutes) //domain/api/v1/chats Dessa forma chatRoutes ira cuidar dessa ROTA
 
 export default appRouter;
 

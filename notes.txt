@@ -1,8 +1,10 @@
 Este projeto é feito utilizando a stack MERN + OPENAI, abaixo deixarei instrucoes do passo a passo GERAL para a construçao de um projeto do genero
 
-PAREI NO 53:01
+
 
 *******STEP BY STEP BACKEND*******
+
+RODAR: npm run dev
 
 1° Iniciaremos com a parte BACKEND
 
@@ -35,4 +37,8 @@ PAREI NO 53:01
 
 12° Iremos criar uma autenticacao segura com JWT e COOKIES , rotas do back e controllers
 
-13° 
+13° Iremos criar os MODEL SCHEMAS DO DB
+
+14° Criamos controllers para serem designados para cuidar das rotas
+
+15° Testamos as rotas no THUNDERBOLT
