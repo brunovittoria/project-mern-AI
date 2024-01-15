@@ -1,8 +1,11 @@
 Este projeto é feito utilizando a stack MERN + OPENAI, abaixo deixarei instrucoes do passo a passo GERAL para a construçao de um projeto do genero
 
-
+PAREI NO 1:18
 
 *******STEP BY STEP BACKEND*******
+
+MIDDLEWARES X CONTROLLERS
+ os middlewares são funções que podem ser usadas em várias partes do aplicativo para realizar ações intermediárias, enquanto os controllers são responsáveis por manipular a lógica específica de uma rota ou recurso.
 
 RODAR: npm run dev
 
@@ -18,7 +21,7 @@ RODAR: npm run dev
   },
 
 4° Mudamos o tsconfig.json :   
-"compilerOptions": {
+"compilerOptions": 
     "module": "NodeNext",
 
 5° Criamos file dist no SERVER
@@ -43,6 +46,6 @@ RODAR: npm run dev
 
 15° Testamos as rotas no THUNDERBOLT
 
-16° Criando MIDDLEWARES: Funcoes executadas ANTES de uma REQ ser executada, no NODE pode ser usado para checar o JSON BODY, TOKENS, COOKIES, PARAMS e muito mais. 
+16° Criando MIDDLEWARES: Funcoes executadas ANTES de uma REQ ser executada, 
+no NODE pode ser usado para checar o JSON BODY, TOKENS, COOKIES, PARAMS e muito mais.E como se fosse um BODY GUARD que so deixa entrar dps das VERIFICACOES e no caso em que nao seja atendida a verificacao ira avisar para o FRONT oque precisa pra entrar na "festa". Para isso existe uma dependency express-validator. Iremos criar esses validator dentro UTILS
 
-E como se fosse um BODY GUARD que so deixa entrar dps das VERIFICACOES e no caso em que nao seja atendida a verificacao ira avisar para o FRONT oque precisa pra entrar na "festa". Para isso existe uma dependency express-validator. Iremos criar esses validator dentro UTILS
