@@ -1,6 +1,6 @@
 Este projeto é feito utilizando a stack MERN + OPENAI, abaixo deixarei instrucoes do passo a passo GERAL para a construçao de um projeto do genero
 
-PAREI NO 1:18
+PAREI NO 1:48 (Criaçao token)
 
 *******STEP BY STEP BACKEND*******
 
@@ -49,3 +49,10 @@ RODAR: npm run dev
 16° Criando MIDDLEWARES: Funcoes executadas ANTES de uma REQ ser executada, 
 no NODE pode ser usado para checar o JSON BODY, TOKENS, COOKIES, PARAMS e muito mais.E como se fosse um BODY GUARD que so deixa entrar dps das VERIFICACOES e no caso em que nao seja atendida a verificacao ira avisar para o FRONT oque precisa pra entrar na "festa". Para isso existe uma dependency express-validator. Iremos criar esses validator dentro UTILS
 
+17° Apos fazer a parte da autenticacao e o user entrar no APP vamos fazer a parte de AUTHORIZATION(TOKEN|JWT) para que users tenham acesso as funcionalidades do APP. 
+
+Vamos considerar um cenário comum de autenticação em uma aplicação web. Suponha que você tenha um sistema de login em uma aplicação onde os usuários podem se autenticar. Após a autenticação bem-sucedida, o servidor pode gerar um JWT e enviá-lo de volta para o cliente. Esse token pode então ser usado pelo cliente para autenticar-se em solicitações futuras sem a necessidade de enviar credenciais a cada vez.
+
+Algo normalmente feito é o armazenamento do JWT em COOKIES: O servidor envia o JWT para o cliente como parte da resposta HTTP. O cliente armazena o JWT no cookie, geralmente utilizando o cabeçalho Set-Cookie na resposta do servidor.
+
+Basicamente neste STEP Vericiamos se o COOKIE MATCHES e se o TOKEN é VALIDO para o usuario ter acesso a uma funcionalidade.
