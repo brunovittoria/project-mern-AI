@@ -1,6 +1,6 @@
 Este projeto é feito utilizando a stack MERN + OPENAI, abaixo deixarei instrucoes do passo a passo GERAL para a construçao de um projeto do genero
 
-PAREI NO 1:48 (Criaçao token)
+PAREI NO 2:08 (Criaçao token)
 
 
 __________________________________
@@ -63,6 +63,34 @@ Basicamente neste STEP Vericiamos se o COOKIE MATCHES e se o TOKEN é VALIDO par
 __________________________________
 *******STEP BY STEP FRONTEND******
 __________________________________
+
+1° Criar VITE APP + Instalacoes: 
+
+npm create vite@latest
+Escolher TS + SWA
+
+instalar node modules:
+npm i
+
+Instalar MUI:
+npm install @mui/material @emotion/react @emotion/styled
+
+Instalar REACT ICONS:
+npm install react-icons --save
+
+Instalar REACT ROUTER DOM:
+npm i react-router-dom
+
+Instalar REACT HOT-TOAST:
+npm i react-hot-toast
+
+
+
+RODAR PROJECT FRONT: 
+
+npm run dev
+
+2° Fazer limpeza pastas + files
 
 
 
