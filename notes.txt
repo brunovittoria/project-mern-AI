@@ -2,7 +2,10 @@ Este projeto é feito utilizando a stack MERN + OPENAI, abaixo deixarei instruco
 
 PAREI NO 1:48 (Criaçao token)
 
+
+__________________________________
 *******STEP BY STEP BACKEND*******
+__________________________________
 
 MIDDLEWARES X CONTROLLERS
  os middlewares são funções que podem ser usadas em várias partes do aplicativo para realizar ações intermediárias, enquanto os controllers são responsáveis por manipular a lógica específica de uma rota ou recurso.
@@ -56,3 +59,10 @@ Vamos considerar um cenário comum de autenticação em uma aplicação web. Sup
 Algo normalmente feito é o armazenamento do JWT em COOKIES: O servidor envia o JWT para o cliente como parte da resposta HTTP. O cliente armazena o JWT no cookie, geralmente utilizando o cabeçalho Set-Cookie na resposta do servidor.
 
 Basicamente neste STEP Vericiamos se o COOKIE MATCHES e se o TOKEN é VALIDO para o usuario ter acesso a uma funcionalidade.
+
+__________________________________
+*******STEP BY STEP FRONTEND******
+__________________________________
+
+
+
