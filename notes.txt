@@ -92,5 +92,10 @@ npm run dev
 
 2° Fazer limpeza pastas + files
 
+3° Fazer configuraçao no main.tsx de tema e router
+
+4° Criamos as pastas e files necessarios para o front
+
+5° Criamos as rotas necessaria em nosso file App.tsx
 
 
