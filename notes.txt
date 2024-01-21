@@ -1,6 +1,6 @@
 Este projeto é feito utilizando a stack MERN + OPENAI, abaixo deixarei instrucoes do passo a passo GERAL para a construçao de um projeto do genero
 
-PAREI NO 2:08 (Criaçao token)
+PAREI NO 2:33 (Auth provider CONTEXT API)
 
 
 __________________________________
@@ -97,5 +97,7 @@ npm run dev
 4° Criamos as pastas e files necessarios para o front
 
 5° Criamos as rotas necessaria em nosso file App.tsx
+
+6° Criamos a estrutura de gerenciamento de estado com o CONTEXT-API
 
 
