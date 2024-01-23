@@ -98,6 +98,6 @@ npm run dev
 
 5° Criamos as rotas necessaria em nosso file App.tsx
 
-6° Criamos a estrutura de gerenciamento de estado com o CONTEXT-API
+6° Criamos a estrutura de gerenciamento de estado com o CONTEXT-API e passamos esse contexto para nosso app no geral
 
 

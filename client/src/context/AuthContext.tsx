@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useEffect, useState } from "react";
+import { ReactNode, createContext, useContext, useEffect, useState } from "react";
 
 // Definindo os tipos para o usuário e a autenticação do usuário
 type User = {
@@ -15,10 +15,10 @@ type UserAuth = {
 }
 
 // Criando o contexto de autenticação com valor inicial como null
-const AuthContext = createContext<UserAuth | null>(null);
+export const AuthContext = createContext<UserAuth | null>(null);
 
 // Componente provedor de autenticação que envolve os componentes filhos
-const AuthProvider = ({ children }: { children: ReactNode }) => {
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
     // Estado para armazenar informações do usuário
     const [user, setUser] = useState<User | null>(null);
 
@@ -62,4 +62,6 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
-export { AuthContext, AuthProvider };
+//Variavel com o contexto que sera usado pelos filhos
+export const useAuth = () => useContext(AuthContext)
+
