@@ -15,12 +15,36 @@ const Header = () => {
                 <div>
                     {auth?.isLoggedIn ? (
                         <>
-                            <NavigationLink bg= "#00ffc" to= "/chat" text="Chat with me!" textColor="black" />
-                            <NavigationLink />
+                            <NavigationLink 
+                                bg="#161ddc"
+                                textColor="white" 
+                                to="/chat" 
+                                text="Chat with me!" 
+                            />
+                            <NavigationLink
+                                bg="#51538f" 
+                                textColor="white"
+                                to="Logout"
+                                text="logout"
+                                onClick={auth.logout}
+                            />
                         </>
                     ) : (
-
-                    ) }
+                        <>
+                            <NavigationLink 
+                                bg="#161ddc"
+                                textColor="white" 
+                                to="/login" 
+                                text="Login"
+                            />
+                            <NavigationLink
+                                bg="#51538f" 
+                                textColor="white"
+                                to="/signup"
+                                text="Signup"
+                            />
+                        </>
+                    )}
                 </div>
             </Toolbar>
         </AppBar>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
-import logoImage from '../../assets/logo.png'
+import logoImage from '/openai.png'
 
 export const Logo = () => {
     return (
@@ -9,19 +9,19 @@ export const Logo = () => {
             display: "flex",
             marginRight: "auto",
             alignItems: "center",
-            gap: "8px"
+            gap: "15px"
         }}>
             <Link to={"/"}>
-                <img src={logoImage} alt="BVAI" width={'30px'} height={'30px'} className="image-inverted"/>
+                <img src={logoImage} alt="BVAI" width={"30px"} height={"30px"} className="image-inverted"/>
+            </Link>{""}
                 <Typography sx={{
                         display: {md:"block", sm:"none", xs:"none"}, 
                         mr: "auto",
                         fontWeight: "800",
                         textShadow: "2px 2px 20px #000"
                     }}>
-                    <span style={{ fontSize: "20px" }}>BV-IA</span>APP
+                    <span style={{ fontSize: "20px" }}>BV-IA</span>
                 </Typography>
-            </Link>
         </div>
     )
 }

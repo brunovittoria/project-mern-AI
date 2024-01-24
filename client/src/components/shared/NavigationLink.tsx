@@ -12,7 +12,11 @@ type Props = {
 //Este é um componente customizavel do nosso NavigationLink
 const NavigationLink = (props:Props) => {
     return (
-        <Link to={props.to} style={{background:props.bg, color: props.textColor}}>
+        <Link 
+            className="nav-link"
+            to={props.to} 
+            style={{background:props.bg, color: props.textColor}}
+        >
             {props.text}
         </Link>
     )
