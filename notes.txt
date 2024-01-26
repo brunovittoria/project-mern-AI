@@ -1,6 +1,6 @@
 Este projeto é feito utilizando a stack MERN + OPENAI, abaixo deixarei instrucoes do passo a passo GERAL para a construçao de um projeto do genero
 
-PAREI NO 2:33 (Auth provider CONTEXT API)
+PAREI NO 3:05 (Auth provider CONTEXT API)
 
 
 __________________________________
@@ -99,5 +99,10 @@ npm run dev
 5° Criamos as rotas necessaria em nosso file App.tsx
 
 6° Criamos a estrutura de gerenciamento de estado com o CONTEXT-API e passamos esse contexto para nosso app no geral
+
+7° Criar componentes no geral
+
+Instalar: npm install react-icons --save
+
 
 
