@@ -1,4 +1,5 @@
 import { ReactNode, createContext, useContext, useEffect, useState } from "react";
+import { loginUser } from "../helpers/api-communicator";
 
 // Definindo os tipos para o usuário e a autenticação do usuário
 type User = {
@@ -33,8 +34,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     // Função para lidar com o processo de login
     const login = async (email: string, password: string) => {
-        // Implemente a lógica de login aqui, por exemplo, fazendo uma chamada à API.
-        // Atualize os estados 'user' e 'isLoggedIn' com as informações do usuário autenticado.
+        const data = await loginUser(email, password)
+        if(data) {
+            setUser({ email: data.email, name: data.name })
+            setIsLoggedIn(true)
+        }
     };
 
     // Função para lidar com o processo de cadastro

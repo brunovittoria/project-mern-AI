@@ -1,6 +1,6 @@
 Este projeto é feito utilizando a stack MERN + OPENAI, abaixo deixarei instrucoes do passo a passo GERAL para a construçao de um projeto do genero
 
-PAREI NO 3:05 (Auth provider CONTEXT API)
+PAREI NO 3:20 (Auth provider CONTEXT API)
 
 
 __________________________________
@@ -104,5 +104,6 @@ npm run dev
 
 Instalar: npm install react-icons --save
 
+8° Devemos fazer a gestao ao entrar pelo form de LOGIN,Agora iremos instalar o axios para o front se comunicar com o backend
 
 

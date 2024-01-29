@@ -79,7 +79,9 @@ export const userLogin = async (req, res, next) => {
             httpOnly: true,
             signed: true,
         });
-        return res.status(200).json({ message: "OK", id: user._id.toString() }); //Passamos o ID do user para o FRONT em STRING, pois por default o id é um OBJECT
+        return res
+            .status(200).json({ message: "OK", id: user._id.toString() }) //Passamos o ID do user para o FRONT em STRING, pois por default o id é um OBJECT
+            .json({ message: "OK", name: user.name, email: user.email }); //Retornamos um json para o FRONTEND
     }
     catch (error) {
         console.log(error);
