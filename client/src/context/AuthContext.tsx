@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useContext, useEffect, useState } from "react";
-import { loginUser } from "../helpers/api-communicator";
+import { checkAuthStatus, loginUser } from "../helpers/api-communicator";
 
 // Definindo os tipos para o usuário e a autenticação do usuário
 type User = {
@@ -27,9 +27,16 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        // Aqui você pode adicionar lógica para verificar se o usuário está autenticado,
-        // como verificar cookies ou fazer uma chamada à API para validar a sessão.
-        // Atualize o estado de 'isLoggedIn' e 'user' de acordo.
+        // Se os cookies do user forem validos mandamos para tela ADMIN
+        async function checkStatus() {
+            const data = await checkAuthStatus()
+            if(data) {
+                setUser({email: data.email, name: data.name})
+                setIsLoggedIn(true)
+            }
+        }
+        checkStatus()
+
     }, []);
 
     // Função para lidar com o processo de login

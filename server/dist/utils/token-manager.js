@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import { COOKIE_NAME } from "./constants.js";
 // Função para criar um token JWT com base no ID e e-mail do usuário
 export const createToken = (id, email, expiresIn) => {
     // Cria um objeto payload(refere-se à parte do token que contém as informações do usuário)
@@ -10,5 +11,24 @@ export const createToken = (id, email, expiresIn) => {
     });
     // Retorna o token gerado
     return token;
+};
+export const verifyToken = async (res, req, next) => {
+    const token = req.signedCookies[`${COOKIE_NAME}`];
+    if (!token || token.trim() === "") {
+        return res.status(401).json({ message: "Token not found" });
+    }
+    return new Promise((resolve, reject) => {
+        return jwt.verify(token, process.env.JWT_SECRET, (err, success) => {
+            if (err) {
+                reject(err.message);
+                return res.status(401).json({ message: "Token Expired" });
+            }
+            else {
+                resolve();
+                res.locals.jwtData = success;
+                return next();
+            }
+        });
+    });
 };
 //# sourceMappingURL=token-manager.js.map
