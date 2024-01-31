@@ -96,3 +96,24 @@ export const userLogin = async (req: Request, res: Response, next: NextFunction)
     }
 }
 
+export const verifyUser = async (req: Request, res: Response, next: NextFunction) => {  
+    try {
+        //Verify USERS TOKEN
+        const user = await User.findById(res.locals.jwtData.id)
+        if (!user) {
+            return res.status(401).send("User not registered or token not working")
+        }
+
+        if (user._id.toString() !== res.locals.jwtData.id){
+            return res.status(401).send("Permissions didn't match")
+        }
+
+        return res
+        .status(200).json({ message: "OK", id: user._id.toString()}) //Passamos o ID do user para o FRONT em STRING, pois por default o id é um OBJECT
+        .json({ message: "OK", name: user.name, email: user.email}) //Retornamos um json para o FRONTEND
+    } catch(error) {
+        console.log(error)
+        return res.status(400).json({ message: "ERROR", cause: error.message })
+    }
+}
+
