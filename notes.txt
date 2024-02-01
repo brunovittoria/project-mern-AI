@@ -1,6 +1,6 @@
 Este projeto é feito utilizando a stack MERN + OPENAI, abaixo deixarei instrucoes do passo a passo GERAL para a construçao de um projeto do genero
 
-PAREI NO 3:20 (Auth provider CONTEXT API)
+PAREI NO 3:41 (Integrando com OPENAI)
 
 
 __________________________________

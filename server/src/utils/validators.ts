@@ -33,5 +33,8 @@ export const signupValidator = [  //This is our first VALIDATOR FUNCTION
     ...loginValidator, //Usamos o spread para pegar as C.L do email e PWD do loginvalidator sem escrever tudo dnv
 ]
 
+export const chatCompletionValidator = [
+    body("message").notEmpty().withMessage("Message is required")
+]
 
 
