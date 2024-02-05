@@ -1,6 +1,6 @@
 Este projeto é feito utilizando a stack MERN + OPENAI, abaixo deixarei instrucoes do passo a passo GERAL para a construçao de um projeto do genero
 
-PAREI NO 3:51 (Integrando com OPENAI)
+PAREI NO 4:19 (Integrando com OPENAI)
 
 
 __________________________________

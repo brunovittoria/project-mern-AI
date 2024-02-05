@@ -2,6 +2,8 @@ import React from 'react'
 import { Avatar, Box, Typography, Button } from '@mui/material'
 import { useAuth } from '../context/AuthContext'
 import { red } from '@mui/material/colors'
+import ChatItem from '../components/chat/ChatItem'
+const chatMessages = []
 
 const Chat = () => {
     const auth = useAuth()
@@ -35,7 +37,7 @@ const Chat = () => {
                 </Box>
             </Box>
             
-            <Box sx={{ display: "flex", flex: { md: 0.8, xs: 1, sm: 1}, width: "100%" }}>
+            <Box sx={{ display: "flex", flex: { md: 0.8, xs: 1, sm: 1}, flexDirection:'column', px: 3 }}>
                 <Typography
                     sx={{ textAlign: "center", fontSize: "40px", color: "white", mb: 2 }}
                 >
@@ -43,19 +45,34 @@ const Chat = () => {
                 </Typography>
 
                 <Box sx={{ 
-                    width: "100%", 
-                    height: "60vh", 
-                    borderRadius: 3, 
-                    mx:"auto", 
-                    display: "flex",
-                    flexDirection: "column",
-                    overflow: "scroll",
-                    overflowX: "hidden",
-                    scrollBehavior: "smooth",}}>
+                        width: "100%", 
+                        height: "60vh", 
+                        borderRadius: 3, 
+                        mx:"auto", 
+                        display: "flex",
+                        flexDirection: "column",
+                        overflow: "scroll",
+                        overflowX: "hidden",
+                        overflowY: "auto",
+                        scrollBehavior: "smooth",}}
+                    >
+                        {chatMessages.map((chat)=> (
+                            <ChatItem content={chat.conten} role={chat.role} key={index}/>
+                        ))}
                 </Box>
+                <div style={{ width: "100%", padding: "20px", borderRadius: 8, backgroundColor: "rgb(17,27,39)"}}></div>
+                {" "}
+                <input type="text" 
+                    style={{ 
+                        width: "100%", 
+                        backgroundColor: "transparent", 
+                        padding:"10px", 
+                        border:"none",
+                        outline:"none",
+                        color: "white",
+                        fontSize: "20px",
+                    }}/>
             </Box>
-
-
         </Box>
     )
 }
