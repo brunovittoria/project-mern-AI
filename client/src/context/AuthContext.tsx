@@ -1,78 +1,74 @@
-import { ReactNode, createContext, useContext, useEffect, useState } from "react";
-import { checkAuthStatus, loginUser } from "../helpers/api-communicator";
-
-// Definindo os tipos para o usuário e a autenticação do usuário
-type User = {
+import {
+    ReactNode,
+    createContext,
+    useContext,
+    useEffect,
+    useState,
+  } from "react";
+  import {
+    checkAuthStatus,
+    loginUser,
+    logoutUser,
+    signupUser,
+  } from "../helpers/api-communicator";
+  
+  type User = {
     name: string;
     email: string;
-}
-
-type UserAuth = {
+  };
+  type UserAuth = {
     isLoggedIn: boolean;
     user: User | null;
     login: (email: string, password: string) => Promise<void>;
     signup: (name: string, email: string, password: string) => Promise<void>;
     logout: () => Promise<void>;
-}
-
-// Criando o contexto de autenticação com valor inicial como null
-export const AuthContext = createContext<UserAuth | null>(null);
-
-// Componente provedor de autenticação que envolve os componentes filhos
-export const AuthProvider = ({ children }: { children: ReactNode }) => {
-    // Estado para armazenar informações do usuário
+  };
+  const AuthContext = createContext<UserAuth | null>(null);
+  
+  export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
-
-    // Estado para rastrear o status de login
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  
     useEffect(() => {
-        // Se os cookies do user forem validos mandamos para tela ADMIN
-        async function checkStatus() {
-            const data = await checkAuthStatus()
-            if(data) {
-                setUser({email: data.email, name: data.name})
-                setIsLoggedIn(true)
-            }
+      // fetch if the user's cookies are valid then skip login
+      async function checkStatus() {
+        const data = await checkAuthStatus();
+        if (data) {
+          setUser({ email: data.email, name: data.name });
+          setIsLoggedIn(true);
         }
-        checkStatus()
-
+      }
+      checkStatus();
     }, []);
-
-    // Função para lidar com o processo de login
     const login = async (email: string, password: string) => {
-        const data = await loginUser(email, password)
-        if(data) {
-            setUser({ email: data.email, name: data.name })
-            setIsLoggedIn(true)
-        }
+      const data = await loginUser(email, password);
+      if (data) {
+        setUser({ email: data.email, name: data.name });
+        setIsLoggedIn(true);
+      }
     };
-
-    // Função para lidar com o processo de cadastro
     const signup = async (name: string, email: string, password: string) => {
-        // Implemente a lógica de cadastro aqui, por exemplo, fazendo uma chamada à API.
-        // Atualize os estados 'user' e 'isLoggedIn' com as informações do novo usuário.
+      const data = await signupUser(name, email, password);
+      if (data) {
+        setUser({ email: data.email, name: data.name });
+        setIsLoggedIn(true);
+      }
     };
-
-    // Função para lidar com o processo de logout
     const logout = async () => {
-        // Implemente a lógica de logout aqui, por exemplo, invalidando o token de autenticação.
-        // Atualize os estados 'user' e 'isLoggedIn' para refletir o logout.
+      await logoutUser();
+      setIsLoggedIn(false);
+      setUser(null);
+      window.location.reload();
     };
-
-    // Valor do contexto a ser fornecido aos componentes filhos
+  
     const value = {
-        user,
-        isLoggedIn,
-        login,
-        logout,
-        signup
+      user,
+      isLoggedIn,
+      login,
+      logout,
+      signup,
     };
-
-    // Fornecendo o contexto aos componentes filhos
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}
-
-//Variavel com o contexto que sera usado pelos filhos
-export const useAuth = () => useContext(AuthContext)
-
+  };
+  
+  export const useAuth = () => useContext(AuthContext);
